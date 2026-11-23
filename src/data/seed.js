@@ -1,0 +1,49 @@
+// Только вымышленные лица и организации. Никаких персональных данных клиентов КРОК.
+export const seed = {
+  companies: [
+    { id: 'alpha', name: 'Альфа Инфраструктура', industry: 'Промышленность', topic: 'Инфраструктура и ЦОД' },
+    { id: 'vector', name: 'Вектор Финанс', industry: 'Финансовые услуги', topic: 'Информационная безопасность' }
+  ],
+  people: [
+    {id:'a1',companyId:'alpha',name:'Михаил Орлов',position:'Генеральный директор',department:'Руководство',role:'ЛПР',attitude:'neutral',influence:'high',knows:['Елена Смирнова'],topics:['Стратегия','Инфраструктура'],style:'Кратко, с цифрами и итогом',note:'Участвует в стратегическом согласовании.',source:'CRM',confirmedAt:'2026-10-25',x:450,y:40},
+    {id:'a2',companyId:'alpha',name:'Анна Соколова',position:'ИТ-директор',department:'ИТ',role:'ЛПР',attitude:'positive',influence:'high',knows:['Елена Смирнова','Дмитрий Ким'],topics:['ЦОД','Облако'],style:'Ориентируется на цифры и сроки',note:'Поддерживает модернизацию инфраструктуры.',source:'Протокол встречи',confirmedAt:'2026-11-07',x:60,y:240},
+    {id:'a3',companyId:'alpha',name:'Игорь Лебедев',position:'Руководитель ИБ',department:'ИБ',role:'Технический',attitude:'neutral',influence:'high',knows:['Дмитрий Ким'],topics:['ИБ','Доступ'],style:'Подробно, с аргументами',note:'Нужно уточнить критерии согласования.',source:'CRM',confirmedAt:'2026-06-18',x:310,y:240},
+    {id:'a4',companyId:'alpha',name:'Мария Волкова',position:'Финансовый директор',department:'Финансы',role:'ЛПР',attitude:'unknown',influence:'high',knows:[],topics:['Бюджет'],style:'',note:'Контакт не установлен.',source:'CRM',confirmedAt:'2026-05-10',x:560,y:240},
+    {id:'a5',companyId:'alpha',name:'Павел Миронов',position:'Руководитель закупок',department:'Закупки',role:'Коуч',attitude:'neutral',influence:'medium',knows:['Сергей Юдин'],topics:['Тендер','ЦОД'],style:'Через официальную переписку',note:'Может подсказать процесс закупки.',source:'Опрос после встречи',confirmedAt:'2026-11-10',x:810,y:240},
+    {id:'a6',companyId:'alpha',name:'Алексей Морозов',position:'Архитектор инфраструктуры',department:'ИТ',role:'Технический',attitude:'positive',influence:'medium',knows:['Дмитрий Ким'],topics:['ЦОД','Облако'],style:'Технические примеры',note:'Проверяет совместимость решений.',source:'Протокол встречи',confirmedAt:'2026-11-12',x:60,y:430},
+    {id:'a7',companyId:'alpha',name:'Екатерина Белова',position:'Руководитель эксплуатации',department:'ИТ',role:'Пользователь',attitude:'neutral',influence:'medium',knows:['Елена Смирнова'],topics:['Мониторинг'],style:'Практические кейсы',note:'Интересуется поддержкой решений.',source:'CRM',confirmedAt:'2026-08-02',x:310,y:430},
+    {id:'a8',companyId:'alpha',name:'Денис Романов',position:'Финансовый аналитик',department:'Финансы',role:'Пользователь',attitude:'unknown',influence:'low',knows:[],topics:['Бюджет'],style:'',note:'Нужна актуализация информации.',source:'CRM',confirmedAt:'2026-03-14',x:560,y:430},
+    {id:'v1',companyId:'vector',name:'Ольга Федорова',position:'Генеральный директор',department:'Руководство',role:'ЛПР',attitude:'neutral',influence:'high',knows:['Дмитрий Ким'],topics:['ИБ'],style:'Краткие отчёты',note:'Участвует в финальном согласовании.',source:'CRM',confirmedAt:'2026-10-10',x:450,y:40},
+    {id:'v2',companyId:'vector',name:'Никита Васильев',position:'Директор по ИБ',department:'ИБ',role:'Технический',attitude:'positive',influence:'high',knows:['Дмитрий Ким','Елена Смирнова'],topics:['ИБ'],style:'Технические детали',note:'Интересует аудит.',source:'CRM',confirmedAt:'2026-11-06',x:125,y:240},
+    {id:'v3',companyId:'vector',name:'Светлана Андреева',position:'Директор по закупкам',department:'Закупки',role:'Коуч',attitude:'unknown',influence:'medium',knows:[],topics:['Тендер'],style:'',note:'Не было прямых касаний.',source:'CRM',confirmedAt:'2026-07-01',x:450,y:240},
+    {id:'v4',companyId:'vector',name:'Артём Павлов',position:'Системный администратор',department:'ИТ',role:'Пользователь',attitude:'neutral',influence:'low',knows:['Елена Смирнова'],topics:['ИБ'],style:'Практические примеры',note:'Проверяет решения в эксплуатации.',source:'Протокол встречи',confirmedAt:'2026-11-13',x:775,y:240}
+  ],
+  relations: [
+    {id:'r1',companyId:'alpha',source:'a1',target:'a2',kind:'reports_to',note:'Прямое подчинение'},
+    {id:'r2',companyId:'alpha',source:'a1',target:'a3',kind:'reports_to',note:'Прямое подчинение'},
+    {id:'r3',companyId:'alpha',source:'a1',target:'a4',kind:'reports_to',note:'Прямое подчинение'},
+    {id:'r4',companyId:'alpha',source:'a1',target:'a5',kind:'reports_to',note:'Прямое подчинение'},
+    {id:'r5',companyId:'alpha',source:'a2',target:'a6',kind:'reports_to',note:'ИТ-команда'},
+    {id:'r6',companyId:'alpha',source:'a2',target:'a7',kind:'reports_to',note:'ИТ-команда'},
+    {id:'r7',companyId:'alpha',source:'a4',target:'a8',kind:'reports_to',note:'Финансовая команда'},
+    {id:'r8',companyId:'alpha',source:'a6',target:'a2',kind:'influences',note:'Влияет на выбор технического решения'},
+    {id:'r9',companyId:'alpha',source:'a5',target:'a4',kind:'works_with',note:'Совместное согласование бюджета'},
+    {id:'v-r1',companyId:'vector',source:'v1',target:'v2',kind:'reports_to',note:'Оргструктура'},
+    {id:'v-r2',companyId:'vector',source:'v1',target:'v3',kind:'reports_to',note:'Оргструктура'},
+    {id:'v-r3',companyId:'vector',source:'v2',target:'v4',kind:'reports_to',note:'Оргструктура'},
+    {id:'v-r4',companyId:'vector',source:'v4',target:'v2',kind:'influences',note:'Влияет на техническую оценку'}
+  ],
+  interactions: [
+    {id:'t1',companyId:'alpha',personId:'a2',type:'Встреча',date:'2026-11-18',summary:'Обсудили план модернизации ЦОД.',author:'Елена Смирнова'},
+    {id:'t2',companyId:'alpha',personId:'a6',type:'Письмо',date:'2026-11-16',summary:'Отправлены технические материалы.',author:'Дмитрий Ким'},
+    {id:'t3',companyId:'alpha',personId:'a5',type:'Встреча',date:'2026-11-10',summary:'Уточнили этапы закупки.',author:'Сергей Юдин'},
+    {id:'t4',companyId:'alpha',personId:'a3',type:'Вебинар',date:'2026-06-18',summary:'Участие в вебинаре по ИБ.',author:'Дмитрий Ким'},
+    {id:'v-t1',companyId:'vector',personId:'v2',type:'Встреча',date:'2026-11-14',summary:'Обсудили технический аудит.',author:'Дмитрий Ким'}
+  ],
+  committee: [
+    {companyId:'alpha',slot:'ЛПР',personId:'a2'}, {companyId:'alpha',slot:'Технический',personId:'a6'},
+    {companyId:'alpha',slot:'Пользователь',personId:'a7'}, {companyId:'alpha',slot:'Коуч',personId:null},
+    {companyId:'vector',slot:'ЛПР',personId:'v1'}, {companyId:'vector',slot:'Технический',personId:'v2'},
+    {companyId:'vector',slot:'Пользователь',personId:'v4'}, {companyId:'vector',slot:'Коуч',personId:null}
+  ]
+};
