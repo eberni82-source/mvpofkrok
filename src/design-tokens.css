@@ -1,0 +1,135 @@
+/* КАРТА ЛПР — generated from tokens.json */
+:root, [data-theme="light"] {
+  --ink: #000000; /* Заголовки капсом, логотип, толстые обводки, текст на paper и на orange (21:1 на белом). */
+  --ink-navy: #14213d; /* Основной текст в схемах и интерфейсе карты (16:1 на paper). */
+  --paper: #ffffff; /* Фон слайдов и карточек. */
+  --paper-soft: #f3f3f3; /* Вторичный фон: доска карты, подложки. */
+  --surface-board: #eaeef5; /* Зоны подразделений на карте, блок «Исключения» в схеме BPMN. */
+  --line: #e1e5ec; /* Тонкие разделители и обводки неактивных элементов. */
+  --muted: #6b7486; /* Вторичный текст на paper и paper-soft (4.7:1). */
+  --muted-light: #8a94a6; /* Только иконки, пунктир и текст от 24px (3:1). */
+  --orange: #fe982c; /* Фирменный маркер: плашка под ключевой фразой, активный фильтр, «чемпион». Текст на нём — только ink. */
+  --orange-ink: #a85400; /* Добавлен для читаемости: оранжевый текст на белом (5.3:1). В презентации оранжевый текст #FE982C на белом — 2.1:1, не проходит. */
+  --green: #38761d; /* Плашки «Обязательно» и митигации рисков, белый текст (5.6:1). */
+  --green-ui: #2f9e5b; /* Отношение «сторонник», обводки шагов «сотрудник». Белый текст только от 24px (3.4:1). */
+  --green-soft: #eaf6ef; /* Фон бейджа «сторонник», текст ink-navy или green. */
+  --blue: #2f6fed; /* Неформальные связи, шаги «система». Белый текст (4.6:1). */
+  --blue-soft: #e6eefd; /* Фон подписи неформальной связи, текст ink-navy или blue. */
+  --red: #980000; /* Риск и конфликт на карте, плашки стека. Белый текст (9.6:1). */
+  --red-soft: #ea9999; /* Шаги «система» в схеме BPMN, подписи конфликтов. Текст ink или red. */
+  --toy-purple: #935b96; /* Цвет игрушечного солдатика с обложки — только акцент в иллюстрациях, не для смысла. */
+  --shadow-pop: 8px 8px 0 #fe982c; /* Выбранный узел карты: жёсткая оранжевая тень без размытия. */
+  --shadow-ink: 10px 10px 0 #000000; /* Карточка человека и главные панели. */
+}
+:root {
+  --space-1: 4px; /* Зазор иконки и текста. */
+  --space-2: 8px; /* Между бейджами, внутри чипов. */
+  --space-3: 16px; /* Внутренний отступ узла карты. */
+  --space-4: 24px; /* Между блоками карточки человека. */
+  --space-5: 32px; /* Внутренний отступ карточки и зон. */
+  --space-6: 48px; /* Шаг сетки точек на доске, минимум между узлами. */
+  --space-7: 64px; /* Поля слайда. */
+  --radius-sm: 6px; /* Подписи связей, маленькие плашки. */
+  --radius-md: 12px; /* Шаги схемы, узлы карты. */
+  --radius-lg: 24px; /* Зоны подразделений, карточка человека, доска. */
+  --radius-pill: 999px; /* Чипы фильтров, бейджи ролей, аватары. */
+  --font-display: "Unbounded", "Arial Black", sans-serif;
+  --font-slide: Arial, Helvetica, sans-serif;
+  --font-ui: "Inter", Arial, sans-serif;
+  --text-hero: 900 120px/0.92 var(--font-display);
+  --text-section: 800 48px/1 var(--font-display);
+  --text-zone-label: 800 16px/20px var(--font-display);
+  --text-slide-title: 700 56px/64px var(--font-slide);
+  --text-marker-label: 700 32px/44px var(--font-slide);
+  --text-slide-body: 400 28px/38px var(--font-slide);
+  --text-slide-small: 400 20px/28px var(--font-slide);
+  --text-ui-title: 800 26px/32px var(--font-ui);
+  --text-ui-name: 700 20px/24px var(--font-ui);
+  --text-ui-body: 500 16px/24px var(--font-ui);
+  --text-ui-label: 700 13px/16px var(--font-ui);
+  --text-ui-caption: 500 12px/16px var(--font-ui);
+}
+.hero {
+  font-family: var(--font-display);
+  font-size: 120px;
+  line-height: 0.92;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.section {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.zone-label {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.slide-title {
+  font-family: var(--font-slide);
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.marker-label {
+  font-family: var(--font-slide);
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.slide-body {
+  font-family: var(--font-slide);
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.slide-small {
+  font-family: var(--font-slide);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.ui-title {
+  font-family: var(--font-ui);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.ui-name {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.ui-body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.ui-label {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.ui-caption {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+}

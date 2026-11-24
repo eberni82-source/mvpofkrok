@@ -7,3 +7,13 @@ dist/
 *.log
 .idea/
 .vscode/
+
+playwright-report/
+test-results/
+
+.venv/
+.data/
+__pycache__/
+*.pyc
+
+*.cursor-backup.json
