@@ -2,11 +2,12 @@ export const ROLE_OPTIONS = ['ЛПР', 'Технический', 'Пользов
 export const ATTITUDE_LABELS = {positive:'Сторонник', neutral:'Нейтрален', skeptical:'Скептически', unknown:'Неизвестно'};
 export const ATTITUDE_OPTIONS = Object.entries(ATTITUDE_LABELS);
 export const INFLUENCE_LABELS = {high:'Высокое', medium:'Среднее', low:'Низкое', unknown:'Неизвестно'};
-export const RELATION_LABELS = {reports_to:'Подчинение', influences:'Влияние на решение', works_with:'Общие встречи / работа'};
-export const RELATION_COLORS = {reports_to:'#97a0b3', influences:'#753bc9', works_with:'#19998a'};
+export const RELATION_LABELS = {reports_to:'Кто кем руководит', influences:'Влияние на решение', works_with:'Общие встречи / работа'};
+export const RELATION_COLORS = {reports_to:'#14213d', influences:'#2f6fed', works_with:'#38761d'};
 
 export const companyPeople = (data, id) => data.people.filter((p) => p.companyId === id);
-export const interactionsFor = (data, id) => data.interactions.filter((t) => t.personId === id).sort((a, b) => b.date.localeCompare(a.date));
+export const compareInteractions = (a, b) => b.date.localeCompare(a.date) || (b.createdAt || '').localeCompare(a.createdAt || '');
+export const interactionsFor = (data, id) => data.interactions.filter((t) => t.personId === id).sort(compareInteractions);
 export const hasGaps = (p) => p.role === 'Неизвестна' || p.attitude === 'unknown' || !p.style?.trim() || !p.knows?.length;
 export const daysSince = (date) => date ? Math.floor((Date.now() - new Date(date+'T00:00:00').getTime()) / 86400000) : null;
 export const isStale = (p) => { const days = daysSince(p.confirmedAt); return days !== null && days > 180; };

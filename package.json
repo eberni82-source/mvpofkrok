@@ -3,11 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "КРОК — интерактивная карта ЛПР, frontend-only MVP",
+  "description": "Cursor — карта клиента: FastAPI, PostgreSQL и SQLite",
   "scripts": {
-    "dev": "node scripts/dev-server.mjs",
-    "start": "node scripts/dev-server.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "dev": "python3 scripts/run-backend.py",
+    "start": "python3 scripts/run-backend.py",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "dev:demo": "node scripts/dev-server.mjs",
+    "test:backend": ".venv/bin/python -m unittest discover -s backend/tests -v",
+    "db:migrate": ".venv/bin/python -m backend.manage migrate"
   },
-  "engines": {"node": ">=18"}
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "jsdom": "^26.1.0"
+  },
+  "dependencies": {
+    "morphdom": "^2.7.8"
+  }
 }

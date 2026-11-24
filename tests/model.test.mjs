@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {seed} from '../src/data/seed.js';
 import {bezierFor} from '../src/graph/curves.js';
-import {companyPeople,visiblePeople,hasGaps,validateRelation,escapeHtml} from '../src/model.js';
+import {companyPeople,visiblePeople,hasGaps,validateRelation,escapeHtml,interactionsFor} from '../src/model.js';
 
 const data=structuredClone(seed);
 test('Клиенты не смешиваются',()=>{
@@ -37,4 +37,13 @@ test('Кривые Безье содержат C, а не прямые отре�
 });
 test('Поле ввода безопасно экранируется',()=>{
   assert.equal(escapeHtml('<script>alert("x")</script>'),'&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;');
+});
+
+test('События одного дня показываются от последней записи к первой',()=>{
+  const events={interactions:[
+    {personId:'p',date:'2026-11-24',createdAt:'2026-11-24T05:00:00Z',id:'first'},
+    {personId:'p',date:'2026-11-24',createdAt:'2026-11-24T06:00:00Z',id:'last'},
+    {personId:'p',date:'2026-11-23',id:'old'},
+  ]};
+  assert.deepEqual(interactionsFor(events,'p').map(t=>t.id),['last','first','old']);
 });
